@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script>
+        function myName() {
+            var txtname = document.getElementById("txtFname")
+            txtname.classList.add("border")
+            if (txtname.value == "") {
+                //txtname.style.borderColor = "red"       //styling in js
+                txtname.classList.add("border-danger")   //bootstrap class in js
+            }
+            else {
+                //txtname.style.borderColor = "green"
+                txtname.classList.add("border-success")
+                txtname.classList.remove("border-danger")
+            }
+
+        }
+
+        //password
+        function myPwd() {
+            var pwdn = document.getElementById("pswd")
+              if (pwdn.value == "123") {
+               alert("correct password")
+              }
+             else
+              {
+              alert("enter correct password")
+               }
+        }
+        //age
+        function myAge() {
+            var agnum = document.getElementById("age")
+
+            if (agnum.value > 50) {
+                alert("enter age below 50")
+            }
+            else if (agnum.value == "") {
+                alert("Age cannot be empty!")
+                document.getElementById("spn").innerHTML = "<h3>please enter age</h3>"
+            }
+            else {
+                agnum.style.borderColor = "green"
+            }
+        }
+
+        function myAdd() {
+            var add = document.getElementById("addr");
+            if (add.value == "") {
+                alert("enter valid address")
+            }
+            else {
+                alert("correct")
+            }
+        }
+
+
+        function myEmi() {
+            var email = document.getElementById("emi");
+            if (emi.value == "") {
+                alert("enter valid address")
+            }
+            else if (emi.value == "arthi@")
+            {
+                alert("correct")
+            }
+        }
+
+        function myNum() {
+            var numb = document.getElementById("num");
+            if (numb.value == "") {
+                alert("enter valid number")
+            }
+            else if (numb.value == "333") {
+                alert("correct")
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="form-control" style="border:solid 20px">
+        <label for="txtFname" lass="form-control">FULL NAME:</label>
+        <input type="text" style="width:100px" class="form-control" id="txtFname" onclick="myName()" required /><br />
+
+        <label for="pswd" >PASSWORD:</label>
+        <input type="password" id="pswd" class="form-control"  style="width:100px" maxlength="10" /><br/>
+        <button class="btn btn-secondary" onclick="myPwd()">PASSWORD</button><br /><br /><br />
+
+        <input type="number" id="age" style="width:100px" class="form-control" /><br/>
+        <span id="spn"> </span>
+        <button class="btn btn-secondary" onclick="myAge()">AGE</button><br /><br /><br />
+
+        <label>gender</label>
+        <input type="radio" id="rad1" name="commongender" checked />male
+        <input type="radio" id="rad2" name="commongender" />female<br /><br /><br />
+
+        <label for="cityddl">CITY:</label>
+        <select id="cityddl">
+            <option value="chennai">chennai</option>
+            <option value="coimbatore" selected>coimbatore</option>
+        </select><br /><br /><br />
+
+        <input type="text" id="addr" />
+        <button class="btn btn-secondary" onclick="myAdd()">address</button><br /><br /><br />
+
+        <input type="email" id="emi" />
+        <button class="btn btn-secondary" onclick="myEmi()">EMAIL</button><br /><br /><br />
+
+        <input type="number" id="num" />
+        <button class="btn btn-secondary" onclick="myNum()">NUMBER VERIFY</button><br /><br /><br />
+
+        <input type="submit" />
+        <input type="reset" />
+
+    </div>
+
+
+
+
+</body>
+</html>

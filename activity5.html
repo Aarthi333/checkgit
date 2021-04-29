@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <script src="jqueryfile.js"></script>
+    <script>
+        function myNum() {
+            var numb = document.getElementById("num");
+            if (num.value == "") {
+                alert("enter valid number")
+            }
+            else if (num.value == "333") {
+                alert("correct")
+            }
+        }
+
+        //array
+        var us2 = [
+            {
+                username: "artz",
+                password: "3"
+            },
+            {
+                username: "art",
+                password: "3"
+            },
+            {
+                username: "aartz",
+                password: "3"
+            }
+        ]
+
+        //tochecklogin
+        function checkLogin() {
+            var username1 = document.getElementById("uname").value;
+            var password1 = document.getElementById("pwd").value;
+            var flag = false;
+            for (var i = 0; i < us2.length; i++) {
+                if (us2[i].username == username1 && us2[i].password == password1) {
+                    alert("welcome")
+                    flag = true;
+                    break;
+                    //return;//returns the control back to the calling line
+                }
+            }
+            if (flag != true) {
+                alert("enter correct login info")
+            }
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#txtFname").click(function () {
+                alert("enter your first name");
+            });
+
+
+
+
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="form-control" style="border:solid 20px">
+        <label for="txtFname" lass="form-control">FULL NAME:</label>
+        <input type="text" style="width:100px" class="form-control" id="txtFname" required /><br />
+
+        <label for="uname">USERNAME</label>
+        <input type="text" class="form-control" id="uname" />
+        <label for="pwd">PASSWORD</label>
+        <input type="password" class="form-control" id="pwd" />
+        <input type="submit" onclick="checkLogin()">
+
+        <input type="number" id="num" />
+        <button class="btn btn-secondary" onclick="myNum()">NUMBER VERIFY</button><br /><br /><br />
+
+        <button><a href="file:///C:/Users/arthi/source/repos/activity5page2.html"/>RESET</a></button>
+
+        
+
+    </div>
+
+
+
+
+</body>
+</html>

@@ -72,32 +72,6 @@ namespace ADOsampleProject
                 con.Close();
             }
         }
-
-        void CountAuthorId()  //counts authorID from authors in pubs database
-        {
-            string strCmd = "select COUNT(au_id) from authors;";
-            cmd = new SqlCommand(strCmd, con);
-            try
-            {
-                con.Open();
-                SqlDataReader drAuthors = cmd.ExecuteReader();
-                while (drAuthors.Read())
-                {
-                    Console.WriteLine("the count of au id is " + drAuthors[0]);
-                }
-            }
-            catch (SqlException sqlException)
-            {
-                Console.WriteLine(sqlException.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-
-
-        }
-
         void UpdateMovie()
             {
                 Console.WriteLine("please enter the id ");

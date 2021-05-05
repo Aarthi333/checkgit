@@ -317,7 +317,6 @@ namespace ADOsampleProject
             //program.UpdateMovie();
             //program.DeleteMovie();
             //program.FetchMoviesFromDatabase();
-            //program.CountAuthorId();
             program.PrintMenu();
             Console.ReadKey();
 

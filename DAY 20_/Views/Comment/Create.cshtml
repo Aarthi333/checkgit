@@ -1,0 +1,48 @@
+﻿@model DAY_20.Models.Comment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </br>
+                @Html.LabelFor(m=>m.Id)
+                @Html.EditorFor(m=>m.Id)
+                <span asp-validation-for="Id" class="text-danger"></span>
+        
+                 </br>
+                 @Html.LabelFor(m=>m.CommenText)
+                 @Html.EditorFor(m=>m.CommenText)
+                <span asp-validation-for="CommenText" class="text-danger"></span>
+                 </br>
+                
+                 @Html.LabelFor(m=>m. PostId )
+                 @Html.EditorFor(m=>m. PostId )
+                <span asp-validation-for=" PostId " class="text-danger"></span>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

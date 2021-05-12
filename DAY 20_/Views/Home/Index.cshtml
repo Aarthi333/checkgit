@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h1>from the index page </h1>
+<p>
+ Name: @ViewData["Name"]
+ <br/>
+ Age:@ViewData["Age"]
+ </p>
+ <p>
+ customer's phone number: @ViewBag.CustomerPhone
+ <br/>
+ price:@ViewBag.Price
+ </p>
+ @TempData.Peek("Post")
+ <h2>Numbers using viewdata </h2>
+ @foreach (var item in (IEnumerable<int>)ViewData["scores"]) //viewdata should be casted
+ {
+      @item
+      <br/>
+ }
+ <h2>Numbers using viewbag </h2>
+ @foreach (var item in ViewBag.Scores) //viewbag need not be casted
+ {
+      @item
+      <br/>
+ }
+
+
+

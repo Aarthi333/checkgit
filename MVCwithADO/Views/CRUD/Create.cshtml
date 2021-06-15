@@ -1,0 +1,53 @@
+﻿@using System.Data
+@model System.Data.DataTable
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <div>
+        <form id="frmNewBook" method="post" action="@Url.Action("InsertRecord")">
+            book title : <input name="txtTitle" />
+            <br />
+            Author ID: 
+            <select name="txtAid" />
+            <option selected>select author id</option>
+            @foreach(DataRow dr in Model.Rows)
+            {
+                 <option value="@dr["AuthorID"].ToString()">@dr["AuthorName"]</option>
+            }
+            </select>
+            <br />
+            Price : <input name="txtPrice" />
+            <input type="submit" value="Submit" name="action" />
+            <input type="submit" value="Cancel" name="action" />
+        </form>
+        @{
+            if (Model.Rows.Count > 0)
+            {
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td>Author ID</td>
+                            <td>Author Name</td>
+                        </tr>
+                    </thead>
+                    @foreach (DataRow dr in Model.Rows)
+                    {
+                        <tr>
+                            <td>@dr["AuthorID"].ToString()</td>
+                            <td>@dr["AuthorName"].ToString()</td>
+                        </tr>
+                    }
+                </table>
+            }
+        }
+    </div>
+</body>
+</html>
